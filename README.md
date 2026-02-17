@@ -1,74 +1,225 @@
-# Fire Penguin Restaurant Ordering System
+# Fire Penguin - Premium Restaurant Ordering System
 
-A full-stack restaurant ordering application built with React, Node.js (Express), and Supabase.
+<div align="center">
 
-## Project Structure
+![Fire Penguin Banner](https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=1200&h=300)
+
+**A high-end, animated restaurant ordering application with React, Node.js, and Supabase**
+
+[![React](https://img.shields.io/badge/React-18+-61DAFB?style=flat&logo=react&logoColor=white)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=flat&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=flat&logo=supabase&logoColor=white)](https://supabase.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+
+[Demo Video](#) • [Live Demo](#) • [Report Bug](#)
+
+</div>
+
+---
+
+## ✨ Features
+
+- 🎨 **Premium UI/UX**: Glassmorphism design with smooth parallax effects
+- 🎭 **Dynamic Animations**: Framer Motion for staggered card animations and layout transitions
+- 🛒 **Interactive Cart**: Real-time sidebar with quantity controls and smooth transitions
+- 🔍 **Category Filtering**: Animated filter pills with instant product reordering
+- 📱 **Fully Responsive**: Mobile-first design optimized for all screen sizes
+- ✅ **Form Validation**: Client-side validation for checkout process
+- 🌙 **Dark Theme**: Premium dark mode with custom color palette
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **React 18** (Vite) - Fast, modern build tool
+- **Tailwind CSS** - Utility-first styling
+- **Framer Motion** - Smooth animations
+- **Lucide React** - Beautiful icons
+- **Axios** - HTTP client
+- **React Hot Toast** - Elegant notifications
+
+### Backend
+- **Node.js** - Runtime environment
+- **Express.js** - Web framework
+- **Supabase** - PostgreSQL database
+- **Multer** - File upload handling
+- **CORS** - Cross-origin resource sharing
+
+---
+
+## 📁 Project Structure
 
 ```
-firepenguinRestaurant/
+FirePenguinRestaurant/
 ├── backend/
-│   ├── .env               # Supabase credentials
-│   ├── package.json       # Backend dependencies
-│   ├── server.js          # Express server & API routes
-│   └── supabaseClient.js  # Supabase initialization
-└── frontend/
-    ├── src/
-    │   ├── components/    # React components (Cart, Navbar, etc.)
-    │   ├── App.jsx        # Main application logic
-    │   └── main.jsx       # Entry point
-    ├── index.html
-    ├── package.json       # Frontend dependencies
-    ├── tailwind.config.js # Styling configuration
-    └── vite.config.js     # Vite configuration & Proxy
+│   ├── .env.example          # Environment variables template
+│   ├── server.js             # Express server & API routes
+│   ├── supabaseClient.js     # Supabase initialization
+│   └── package.json          # Backend dependencies
+├── frontend/
+│   ├── src/
+│   │   ├── components/       # React components
+│   │   │   ├── CartSidebar.jsx
+│   │   │   ├── Hero.jsx
+│   │   │   ├── Layout.jsx
+│   │   │   ├── Loading.jsx
+│   │   │   ├── Menu.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   └── ProductCard.jsx
+│   │   ├── context/          # Global state management
+│   │   │   └── CartContext.jsx
+│   │   ├── lib/              # Utility functions
+│   │   │   └── utils.js
+│   │   ├── App.jsx           # Main app component
+│   │   ├── main.jsx          # Entry point
+│   │   └── index.css         # Global styles
+│   ├── tailwind.config.js    # Tailwind configuration
+│   ├── vite.config.js        # Vite configuration
+│   └── package.json          # Frontend dependencies
+├── seed.sql                  # Database schema & seed data
+└── README.md                 # You are here!
 ```
 
-## Prerequisites
+---
 
-- Node.js & npm (Make sure they are in your system PATH)
-- A Supabase project with `products` and `orders` tables.
+## 🚀 Quick Start
 
-## Setup Instructions
+### Prerequisites
 
-### 1. Database Setup (Supabase)
+- **Node.js** (v16+)
+- **npm** or **yarn**
+- **Supabase Account** ([Sign up free](https://supabase.com))
 
-Create the tables and seed some data using the **SQL Editor** in your Supabase dashboard:
-1. Open the SQL Editor in Supabase.
-2. Copy the contents of [`seed.sql`](file:///c:/Users/j/Documents/firepenguinRestaurant/seed.sql).
-3. Paste and run it.
+### 1️⃣ Database Setup
 
-This will create the `products` and `orders` tables and add 8 initial items to your menu.
+1. Create a new Supabase project
+2. Go to **SQL Editor** in your Supabase dashboard
+3. Copy and run the contents of `seed.sql`
 
-### 2. Environment Variables
+This creates the `products` and `orders` tables and populates 10 premium menu items.
+
+### 2️⃣ Backend Setup
+
+```bash
+cd backend
+npm install
+```
 
 Create a `.env` file in the `backend/` directory:
 
 ```env
-SUPABASE_URL=your_supabase_url
+SUPABASE_URL=your_supabase_project_url
 SUPABASE_ANON_KEY=your_supabase_anon_key
 PORT=5000
 ```
 
-### 3. Installation & Running
+Start the backend server:
 
-**Backend:**
 ```bash
-cd backend
-npm install
 npm run dev
 ```
 
-**Frontend:**
+Server runs on `http://localhost:5000`
+
+### 3️⃣ Frontend Setup
+
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-The frontend will be available at `http://localhost:5173`.
+Frontend runs on `http://localhost:5173`
 
-## API Documentation
+---
 
-- `GET /api/products`: Returns all products.
-- `GET /api/products/:id`: Returns a single product by ID.
-- `POST /api/orders`: Submits a new order.
-  - Body: `{ cartItems, totalPrice, customerName, customerEmail }`
+## 📡 API Endpoints
+
+### Products
+
+| Method | Endpoint | Description | Query Params |
+|--------|----------|-------------|--------------|
+| `GET` | `/api/products` | Fetch all products | `?category=Mains` (optional) |
+| `GET` | `/api/products/:id` | Fetch single product | - |
+
+### Orders
+
+| Method | Endpoint | Description | Body |
+|--------|----------|-------------|------|
+| `POST` | `/api/orders` | Submit new order | `{ cartItems, totalPrice, customerName, customerAddress, customerPhone }` |
+
+### Uploads
+
+| Method | Endpoint | Description | Body |
+|--------|----------|-------------|------|
+| `POST` | `/api/upload` | Upload product image | `multipart/form-data` with `image` field |
+
+---
+
+## 📸 Screenshots
+
+### Hero Section
+![Hero Section](./screenshots/hero.png)
+
+### Dynamic Menu
+![Menu with Filters](./screenshots/menu.png)
+
+### Shopping Cart
+![Cart Sidebar](./screenshots/cart.png)
+
+### Checkout Flow
+![Checkout Form](./screenshots/checkout.png)
+
+---
+
+## 🧪 Testing
+
+### Manual Testing Checklist
+
+- [ ] Products load from database
+- [ ] Category filtering works smoothly
+- [ ] Add to cart shows toast notification
+- [ ] Cart badge updates correctly
+- [ ] Quantity increment/decrement works
+- [ ] Total price calculates accurately
+- [ ] Checkout form validates required fields
+- [ ] Order submits successfully to backend
+- [ ] Responsive design on mobile/tablet/desktop
+
+---
+
+## 🚧 Future Enhancements
+
+- [ ] TypeScript migration
+- [ ] Search functionality
+- [ ] User authentication
+- [ ] Order history tracking
+- [ ] Payment integration (Stripe)
+- [ ] Docker containerization
+- [ ] Deployment (Vercel + Railway)
+
+---
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+## 👨‍💻 Author
+
+**Your Name**
+
+- GitHub: [@yourusername](https://github.com/yourusername)
+- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+
+---
+
+<div align="center">
+
+**Made with ❤️ and 🔥 by Fire Penguin Team**
+
+⭐ Star this repo if you found it helpful!
+
+</div>

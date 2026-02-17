@@ -6,21 +6,35 @@ export default {
     ],
     theme: {
         extend: {
+            fontFamily: {
+                sans: ['Inter', 'sans-serif'],
+                heading: ['Outfit', 'sans-serif'],
+            },
             colors: {
+                background: '#09090b', // Zinc 950
+                surface: '#18181b', // Zinc 900
                 primary: {
-                    50: '#fff1f2',
-                    100: '#ffe4e6',
-                    200: '#fecdd3',
-                    300: '#fda4af',
-                    400: '#fb7185',
-                    500: '#f43f5e',
-                    600: '#e11d48',
-                    700: '#be123c',
-                    800: '#9f1239',
-                    900: '#881337',
-                }
+                    DEFAULT: '#f97316', // Orange 500
+                    hover: '#ea580c', // Orange 600
+                    foreground: '#ffffff',
+                },
+                secondary: {
+                    DEFAULT: '#27272a', // Zinc 800
+                    foreground: '#fafafa', // Zinc 50
+                },
+                accent: {
+                    DEFAULT: '#eab308', // Yellow 500
+                },
+                glass: 'rgba(255, 255, 255, 0.05)',
+            },
+            backdropBlur: {
+                xs: '2px',
             }
         },
     },
-    plugins: [],
+    plugins: [
+        function ({ addVariant }) {
+            addVariant('light', '.light-theme &');
+        }
+    ],
 }
