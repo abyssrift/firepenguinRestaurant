@@ -1,6 +1,5 @@
 # Fire Penguin - Premium Restaurant Ordering System
 
-<div align="center">
 
 ![Fire Penguin Banner](https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=1200&h=300)
 
@@ -13,7 +12,7 @@
 
 [Demo Video](#) • [Live Demo](#) • [Report Bug](#)
 
-</div>
+
 
 ---
 
@@ -172,5 +171,3 @@ Frontend runs on `http://localhost:5173`
 ![Checkout Form](./screenshots/checkout.png)
 
 ---
-
-</div>
