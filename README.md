@@ -10,7 +10,7 @@
 [![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=flat&logo=supabase&logoColor=white)](https://supabase.com/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-[Demo Video](#) • [Live Demo](#) • [Report Bug](#)
+[Demo Video](https://youtu.be/U5Njsul7nRM) • [Live Demo](https://youtu.be/U5Njsul7nRM) • [Report Bug](https://youtu.be/U5Njsul7nRM)
 
 
 
@@ -153,21 +153,3 @@ Frontend runs on `http://localhost:5173`
 | Method | Endpoint | Description | Body |
 |--------|----------|-------------|------|
 | `POST` | `/api/upload` | Upload product image | `multipart/form-data` with `image` field |
-
----
-
-## 📸 Screenshots
-
-### Hero Section
-![Hero Section](./screenshots/hero.png)
-
-### Dynamic Menu
-![Menu with Filters](./screenshots/menu.png)
-
-### Shopping Cart
-![Cart Sidebar](./screenshots/cart.png)
-
-### Checkout Flow
-![Checkout Form](./screenshots/checkout.png)
-
----
